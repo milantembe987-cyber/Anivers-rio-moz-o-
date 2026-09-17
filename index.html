@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<title>Para o meu mozão ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<audio id="music" src="musica.mp3" preload="auto" loop></audio>
+
+<main id="app">
+  <section id="intro" class="screen active">
+    <button id="startBtn">APERTE AQUI</button>
+  </section>
+
+  <section id="same" class="screen">
+    <div class="centerText">Igual, mas diferente.</div>
+  </section>
+
+  <section id="letter" class="screen photoScreen">
+    <div class="photoBg" id="heroPhoto"></div>
+    <div class="shade"></div>
+    <div class="hearts" aria-hidden="true"></div>
+    <div class="letterContent">
+      <p class="hello">Bom dia, mozão. ❤️</p>
+      <div id="message"></div>
+      <button class="nextBtn" id="letterNext">PRÓXIMO PASSO →</button>
+    </div>
+  </section>
+
+  <section id="memories" class="screen">
+    <div class="memoryCard">
+      <div class="memoryPhoto" id="memoryPhoto"></div>
+      <div class="memoryShade"></div>
+      <div class="memoryCaption" id="memoryCaption"></div>
+      <button class="nextBtn" id="memoryNext">PRÓXIMO →</button>
+    </div>
+  </section>
+
+  <section id="final" class="screen finalScreen">
+    <div class="finalGlow"></div>
+    <div class="finalText">
+      <div class="heart">❤️</div>
+      <div class="moz">Mozão.</div>
+      <div class="lastLine">Agora vai te preparar que a faculdade é daqui a pouco. 😂❤️</div>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

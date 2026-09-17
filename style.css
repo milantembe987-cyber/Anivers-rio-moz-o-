@@ -1,0 +1,44 @@
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;background:#050505;color:#fff;font-family:Georgia,"Times New Roman",serif;overflow:hidden}
+button{font:inherit}
+.screen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 1s ease,visibility 1s ease}
+.screen.active{opacity:1;visibility:visible;pointer-events:auto}
+#intro{background:#050505}
+#startBtn,.nextBtn{border:1px solid rgba(255,255,255,.38);background:rgba(10,10,10,.48);color:#fff;letter-spacing:.22em;font-family:Arial,sans-serif;font-size:12px;padding:15px 23px;border-radius:2px;cursor:pointer;box-shadow:0 0 24px rgba(120,0,20,.18);animation:pulse 2.6s infinite}
+#startBtn:active,.nextBtn:active{transform:scale(.98)}
+@keyframes pulse{50%{box-shadow:0 0 30px rgba(150,0,30,.38)}}
+#same{background:#050505}
+.centerText{font-size:clamp(22px,6vw,38px);letter-spacing:.03em;opacity:0;animation:fadeText 2.8s ease forwards}
+@keyframes fadeText{0%{opacity:0}25%,72%{opacity:1}100%{opacity:0}}
+.photoScreen{background:#130308}
+.photoBg,.memoryPhoto{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;transform:scale(1.015);transition:transform 9s ease}
+.active .photoBg,.active .memoryPhoto{transform:scale(1.06)}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(15,0,5,.78) 72%,rgba(5,0,2,.94))}
+.letterContent{position:relative;z-index:3;width:min(88vw,700px);height:100%;padding:11vh 0 8vh;display:flex;flex-direction:column;overflow:auto;scrollbar-width:none}
+.letterContent::-webkit-scrollbar{display:none}
+.hello{font-size:clamp(25px,7vw,43px);margin:0 0 28px;opacity:0;transform:translateY(12px);animation:up 1s .2s ease forwards}
+#message{font-size:clamp(17px,4.7vw,23px);line-height:1.7;text-shadow:0 2px 12px #000}
+.paragraph{opacity:0;transform:translateY(14px);margin:0 0 25px;animation:up 1s ease forwards}
+.paragraph:nth-child(2){animation-delay:.8s}.paragraph:nth-child(3){animation-delay:1.7s}.paragraph:nth-child(4){animation-delay:2.6s}.paragraph:nth-child(5){animation-delay:3.5s}
+.emphasis{display:block;font-size:1.28em;letter-spacing:.08em;margin:18px 0}
+@keyframes up{to{opacity:1;transform:none}}
+.nextBtn{margin:14px auto 0;animation:none;flex:none}
+#letterNext{opacity:0;animation:up 1s 4.5s ease forwards}
+.hearts{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.heartParticle{position:absolute;bottom:-30px;opacity:0;animation:float 8s linear forwards;font-size:16px}
+@keyframes float{0%{transform:translateY(0) scale(.7);opacity:0}15%{opacity:.25}100%{transform:translateY(-110vh) translateX(var(--drift)) scale(1.2);opacity:0}}
+#memories{background:#080103}
+.memoryCard{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center}
+.memoryShade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 35%,rgba(8,0,3,.9) 100%)}
+.memoryCaption{position:relative;z-index:2;width:min(88vw,650px);text-align:center;margin-bottom:118px;font-size:clamp(24px,6.5vw,40px);line-height:1.25;text-shadow:0 3px 18px #000;opacity:0;transform:translateY(15px);transition:opacity .9s,transform .9s}
+.memoryCaption.show{opacity:1;transform:none}
+#memoryNext{position:absolute;z-index:3;bottom:45px;left:50%;transform:translateX(-50%);white-space:nowrap}
+.finalScreen{background:#050002}
+.finalGlow{position:absolute;width:65vw;height:65vw;max-width:500px;max-height:500px;border-radius:50%;background:radial-gradient(circle,rgba(100,0,20,.25),transparent 68%);filter:blur(8px)}
+.finalText{position:relative;text-align:center;width:88vw;opacity:0;animation:up 2s .7s ease forwards}
+.heart{font-size:42px;margin-bottom:18px}
+.moz{font-size:clamp(34px,9vw,58px);margin-bottom:25px}
+.lastLine{font-size:clamp(18px,5vw,26px);line-height:1.45}
+.fadeOut{animation:fadeOut 2.2s ease forwards!important}
+@keyframes fadeOut{to{opacity:0}}
+@media (max-height:700px){.letterContent{padding-top:7vh}.letterContent{font-size:.93em}.memoryCaption{margin-bottom:105px}}
